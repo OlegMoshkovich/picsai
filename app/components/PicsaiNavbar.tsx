@@ -5,9 +5,9 @@ import SiteLogo from "./PicsaiLogo";
 import { onHomeSectionLinkClick } from "../lib/home-section-navigation";
 
 const NAV_LINKS = [
-  { href: "/#edition-2026", label: "Third Edition" },
-  { href: "/#edition-2025", label: "Second Edition" },
   { href: "/#edition-2024", label: "First Edition" },
+  { href: "/#edition-2025", label: "Second Edition" },
+  { href: "/#edition-2026", label: "Third Edition" },
 ] as const;
 
 interface SiteNavbarProps {

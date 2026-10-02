@@ -107,6 +107,14 @@ const SPEAKERS25 = [
     scholar: "https://scholar.google.com/citations?user=CuArAkgAAAAJ",
   },
   {
+    initials: "AA",
+    name: "Anna Aristova",
+    title: "Artist",
+    affiliation: "Royal Colleg of Art",
+    photo: "/team_photo/Anna.png?v=2",
+    scholar: "",
+  },
+  {
     initials: "FA",
     name: "Francesco Arzani",
     title: "Research Scientist",
@@ -121,14 +129,6 @@ const SPEAKERS25 = [
     affiliation: "Poznań University of Technology",
     photo: "/picsai/Wojciech.jpg",
     scholar: "https://scholar.google.com/citations?user=-75xQzMAAAAJ",
-  },
-  {
-    initials: "AA",
-    name: "Anna Aristova",
-    title: "Artist",
-    affiliation: "Royal Colleg of Art",
-    photo: "/team_photo/Anna.png?v=2",
-    scholar: "",
   },
   {
     initials: "RG",
@@ -149,6 +149,14 @@ const SPEAKERS24 = [
     scholar: "https://scholar.google.com/citations?user=-D0EgMIAAAAJ",
   },
   {
+    initials: "RG",
+    name: "Roza Gazarian",
+    title: "Artist",
+    affiliation: "Artist",
+    photo: "/picsai/Roza.jpg",
+    scholar: "",
+  },
+  {
     initials: "GN",
     name: "Gergely Neu",
     title: "Associate Professor",
@@ -157,12 +165,28 @@ const SPEAKERS24 = [
     scholar: "https://scholar.google.com/citations?user=uz27G84AAAAJ",
   },
   {
+    initials: "IM",
+    name: "Inga Marchuk",
+    title: "Artist",
+    affiliation: "Artist",
+    photo: "/picsai/Inga.jpg",
+    scholar: "",
+  },
+  {
     initials: "IK",
     name: "Ilja Kuzborskij",
     title: "Research Scientist",
     affiliation: "Google DeepMind",
     photo: "/picsai/Ilja.jpg",
     scholar: "https://scholar.google.com/citations?user=4Io_CtIAAAAJ",
+  },
+  {
+    initials: "AA",
+    name: "Anna Aristova",
+    title: "Artist",
+    affiliation: "Royal Colleg of Art",
+    photo: "/team_photo/Anna.png?v=2",
+    scholar: "",
   },
   {
     initials: "FA",
@@ -179,30 +203,6 @@ const SPEAKERS24 = [
     affiliation: "Universitat Pompeu Fabra",
     photo: "/picsai/Antoine.jpg",
     scholar: "https://scholar.google.com/citations?user=W6d2vtMAAAAJ",
-  },
-  {
-    initials: "RG",
-    name: "Roza Gazarian",
-    title: "Artist",
-    affiliation: "Artist",
-    photo: "/picsai/Roza.jpg",
-    scholar: "",
-  },
-  {
-    initials: "IM",
-    name: "Inga Marchuk",
-    title: "Artist",
-    affiliation: "Artist",
-    photo: "/picsai/Inga.jpg",
-    scholar: "",
-  },
-  {
-    initials: "AA",
-    name: "Anna Aristova",
-    title: "Artist",
-    affiliation: "Royal Colleg of Art",
-    photo: "/team_photo/Anna.png?v=2",
-    scholar: "",
   },
 ] as const;
 
@@ -935,7 +935,7 @@ export default function PicsaiPage() {
                   onClick={() => setModalPhoto({ year: 2024, index: n })}
                 >
                   <Image
-                    src={`/picsai27/${n}.jpeg`}
+                    src={`/picsai24/${n}.jpeg`}
                     alt={`PICSAI 2024 — photo ${n}`}
                     fill
                     sizes="384px"

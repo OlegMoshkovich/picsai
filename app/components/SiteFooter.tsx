@@ -24,9 +24,9 @@ export default function SiteFooter() {
 
           <div className="text-left md:text-right font-serif flex flex-col justify-between mt-0 sm:mt-10 md:mt-30">
             <div className="space-y-2 text-sm sm:text-base">
-              <Link href="/#edition-2026" onClick={(event) => onHomeSectionLinkClick(event, "/#edition-2026")} className="block hover:underline">Third Edition</Link>
-              <Link href="/#edition-2025" onClick={(event) => onHomeSectionLinkClick(event, "/#edition-2025")} className="block hover:underline">Second Edition</Link>
               <Link href="/#edition-2024" onClick={(event) => onHomeSectionLinkClick(event, "/#edition-2024")} className="block hover:underline">First Edition</Link>
+              <Link href="/#edition-2025" onClick={(event) => onHomeSectionLinkClick(event, "/#edition-2025")} className="block hover:underline">Second Edition</Link>
+              <Link href="/#edition-2026" onClick={(event) => onHomeSectionLinkClick(event, "/#edition-2026")} className="block hover:underline">Third Edition</Link>
             </div>
 
             <div className="text-sm sm:text-base mt-24 sm:mt-12">
