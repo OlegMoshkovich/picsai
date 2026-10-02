@@ -332,8 +332,8 @@ const SCHEDULE_2026 = [
 ];
 
 const MOMENTS = {
-  2026: { dir: "picsai26", count: 11 },
-  2025: { dir: "picsai25", count: 8 },
+  2026: { dir: "picsai26", count: 5 },
+  2025: { dir: "picsai25", count: 6 },
   2024: { dir: "picsai24", count: 5 },
 } as const;
 
@@ -919,31 +919,6 @@ export default function PicsaiPage() {
                   </div>
                 ))}
               </div>
-            </div>
-          </div>
-
-          {/* Photo Gallery — PICSAI 2024 */}
-          <div className="mt-16">
-            <p className="mb-4 text-[10px] font-sans uppercase tracking-wide text-black/50">
-              Moments | 2024
-            </p>
-            <div className="flex gap-2 overflow-x-auto pb-2">
-              {Array.from({ length: MOMENTS[2024].count }, (_, i) => i + 1).map((n) => (
-                <button
-                  key={n}
-                  className="relative h-64 w-96 flex-none overflow-hidden cursor-zoom-in"
-                  onClick={() => setModalPhoto({ year: 2024, index: n })}
-                >
-                  <Image
-                    src={`/picsai24/${n}.jpeg`}
-                    alt={`PICSAI 2024 — photo ${n}`}
-                    fill
-                    sizes="384px"
-                    unoptimized
-                    className="object-cover"
-                  />
-                </button>
-              ))}
             </div>
           </div>
         </div>
