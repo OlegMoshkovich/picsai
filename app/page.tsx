@@ -149,11 +149,11 @@ const SPEAKERS24 = [
     scholar: "https://scholar.google.com/citations?user=-D0EgMIAAAAJ",
   },
   {
-    initials: "RG",
-    name: "Roza Gazarian",
+    initials: "IM",
+    name: "Inga Marchuk",
     title: "Artist",
-    affiliation: "Artist",
-    photo: "/picsai/Roza.jpg",
+    affiliation: "Independent artist",
+    photo: "/picsai/Inga.jpg",
     scholar: "",
   },
   {
@@ -165,11 +165,11 @@ const SPEAKERS24 = [
     scholar: "https://scholar.google.com/citations?user=uz27G84AAAAJ",
   },
   {
-    initials: "IM",
-    name: "Inga Marchuk",
+    initials: "RG",
+    name: "Roza Gazarian",
     title: "Artist",
-    affiliation: "Artist",
-    photo: "/picsai/Inga.jpg",
+    affiliation: "A Space",
+    photo: "/picsai/Roza.jpg",
     scholar: "",
   },
   {
