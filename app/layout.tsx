@@ -10,7 +10,7 @@ const archivo = Archivo({
 });
 
 export const metadata: Metadata = {
-  title: "PICSAI — Probability, Information, Combinatorics and AI Symposium",
+  title: "PICSAI Symposium",
   description:
     "Probability, Information, Combinatorics and AI Symposium. Third edition, 25 September to 2 October 2026 in Alanya, Türkiye.",
   openGraph: {
