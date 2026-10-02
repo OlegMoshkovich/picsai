@@ -1,33 +1,17 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 
 const grid = [
   ['P', 'I', 'C', 'S','A','I'],
 ];
 
-const WANDER_STEP_MS = 260;
-const WANDER_TRAIL = 3;
-const WANDER_TRAVERSAL = [0, 4, 8, 2, 5, 6, 1, 7, 3];
-
-function wanderLitSquares(step: number): Set<number> {
-  const lit = new Set<number>();
-  for (let offset = 0; offset < WANDER_TRAIL; offset += 1) {
-    const position =
-      ((step - offset) % WANDER_TRAVERSAL.length + WANDER_TRAVERSAL.length) %
-      WANDER_TRAVERSAL.length;
-    lit.add(WANDER_TRAVERSAL[position]);
-  }
-  return lit;
-}
-
 interface SiteLogoProps {
   size?: number;
   letterSize?: string;
   href?: string | null;
   className?: string;
-  animating?: boolean;
 }
 
 export default function SiteLogo({
@@ -35,39 +19,11 @@ export default function SiteLogo({
   letterSize,
   href = "/",
   className,
-  animating = false,
 }: SiteLogoProps) {
   const computedFontSize = Math.round((size / 3) * 0.4);
   const [toggledSquares, setToggledSquares] = useState<Set<number>>(new Set());
-  const [wanderLit, setWanderLit] = useState<Set<number> | null>(null);
-  const wanderTimer = useRef<number | undefined>(undefined);
-
-  useEffect(() => {
-    const stop = () => {
-      if (wanderTimer.current !== undefined) {
-        window.clearInterval(wanderTimer.current);
-        wanderTimer.current = undefined;
-      }
-      setWanderLit(null);
-    };
-
-    if (!animating || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      stop();
-      return;
-    }
-
-    let step = 0;
-    setWanderLit(wanderLitSquares(1));
-    wanderTimer.current = window.setInterval(() => {
-      step += 1;
-      setWanderLit(wanderLitSquares(step + 1));
-    }, WANDER_STEP_MS);
-
-    return stop;
-  }, [animating]);
 
   const handleToggle = (index: number) => {
-    if (animating) return;
     setToggledSquares(prev => {
       const next = new Set(prev);
       if (next.has(index)) {
@@ -87,8 +43,7 @@ export default function SiteLogo({
         {grid.map((row, rowIndex) =>
           row.map((letter, colIndex) => {
             const index = rowIndex + colIndex;
-            const isToggled =
-              wanderLit !== null ? wanderLit.has(index) : toggledSquares.has(index);
+            const isToggled = toggledSquares.has(index);
             return (
               <div
                 key={`${rowIndex}-${colIndex}`}

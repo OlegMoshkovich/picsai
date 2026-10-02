@@ -334,7 +334,7 @@ const SCHEDULE_2026 = [
 const MOMENTS = {
   2026: { dir: "picsai26", count: 11 },
   2025: { dir: "picsai25", count: 8 },
-  2024: { dir: "picsai27", count: 6 },
+  2024: { dir: "picsai24", count: 5 },
 } as const;
 
 type MomentYear = keyof typeof MOMENTS;
