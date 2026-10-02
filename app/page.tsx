@@ -144,7 +144,7 @@ const SPEAKERS24 = [
     initials: "YA",
     name: "Yasin Abbasi Yadkori",
     title: "Research Scientist",
-    affiliation: "Deep Mind",
+    affiliation: "Google DeepMind",
     photo: "/team_photo/Yasin.png?v=2",
     scholar: "https://scholar.google.com/citations?user=-D0EgMIAAAAJ",
   },
