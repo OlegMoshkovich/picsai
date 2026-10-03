@@ -1,4 +1,7 @@
+export const HOME_SECTION_NAVIGATE_EVENT = "home-section-navigate";
+
 export function scrollToHomeSection(id: string): void {
+  window.dispatchEvent(new CustomEvent(HOME_SECTION_NAVIGATE_EVENT, { detail: id }));
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
