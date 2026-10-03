@@ -353,19 +353,15 @@ function shiftMoment(
 export default function PicsaiPage() {
   const pageScrollRef = useRef<HTMLDivElement>(null);
   const [scheduleYear, setScheduleYear] = useState<number | null>(null);
-  const [openEditions, setOpenEditions] = useState<number[]>([]);
+  const [openEdition, setOpenEdition] = useState<number | null>(2026);
   const toggleEdition = (year: number) =>
-    setOpenEditions((current) =>
-      current.includes(year) ? current.filter((y) => y !== year) : [...current, year]
-    );
+    setOpenEdition((current) => (current === year ? null : year));
   const [modalPhoto, setModalPhoto] = useState<{ year: MomentYear; index: number } | null>(null);
 
   useEffect(() => {
     const openEditionFor = (id: string) => {
       const year = Number(id.match(/^edition-(\d{4})$/)?.[1]);
-      if (year === 2024 || year === 2025) {
-        setOpenEditions((current) => (current.includes(year) ? current : [...current, year]));
-      }
+      if (year === 2024 || year === 2025 || year === 2026) setOpenEdition(year);
     };
     const onSectionNavigate = (event: Event) => {
       openEditionFor((event as CustomEvent<string>).detail);
@@ -517,9 +513,26 @@ export default function PicsaiPage() {
         className="flex w-full scroll-mt-0 flex-col bg-[#E9E8DE] px-4 sm:px-6 lg:px-8 pt-8 pb-8 md:pt-10 md:pb-10"
       >
         <div className="mx-auto w-full max-w-7xl">
-          <h2 className="mb-10 font-test-american-grotesk text-[1.85rem] font-bold leading-[1.42] tracking-tight text-black font-sans sm:text-4xl md:mb-14 md:text-5xl md:leading-[1.2] lg:text-[3.25rem]">
-            10.2026 | Third Edition
-          </h2>
+          <button
+            type="button"
+            onClick={() => toggleEdition(2026)}
+            aria-expanded={openEdition === 2026}
+            aria-controls="edition-2026-content"
+            className="flex w-full items-center justify-between gap-4 text-left"
+          >
+            <h2 className="font-test-american-grotesk text-[1.85rem] font-bold leading-[1.42] tracking-tight text-black font-sans sm:text-4xl md:text-5xl md:leading-[1.2] lg:text-[3.25rem]">
+              10.2026 | Third Edition
+            </h2>
+            <span className={`text-2xl text-black/50 transition-transform duration-300 md:text-3xl ${openEdition === 2026 ? "rotate-180" : ""}`}>
+              ↓
+            </span>
+          </button>
+          <div
+            id="edition-2026-content"
+            className="overflow-hidden transition-all duration-500 ease-in-out"
+            style={{ maxHeight: openEdition === 2026 ? "20000px" : "0px" }}
+          >
+          <div className="pt-10 md:pt-14">
 
 
           <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-12">
@@ -659,6 +672,8 @@ export default function PicsaiPage() {
               ))}
             </div>
           </div>
+          </div>
+          </div>
         </div>
       </section>
       <section
@@ -669,21 +684,21 @@ export default function PicsaiPage() {
           <button
             type="button"
             onClick={() => toggleEdition(2025)}
-            aria-expanded={openEditions.includes(2025)}
+            aria-expanded={openEdition === 2025}
             aria-controls="edition-2025-content"
             className="flex w-full items-center justify-between gap-4 text-left"
           >
             <h2 className="font-test-american-grotesk text-[1.85rem] font-bold leading-[1.42] tracking-tight text-black font-sans sm:text-4xl md:text-5xl md:leading-[1.2] lg:text-[3.25rem]">
               09.2025 | Second Edition
             </h2>
-            <span className={`text-2xl text-black/50 transition-transform duration-300 md:text-3xl ${openEditions.includes(2025) ? "rotate-180" : ""}`}>
+            <span className={`text-2xl text-black/50 transition-transform duration-300 md:text-3xl ${openEdition === 2025 ? "rotate-180" : ""}`}>
               ↓
             </span>
           </button>
           <div
             id="edition-2025-content"
             className="overflow-hidden transition-all duration-500 ease-in-out"
-            style={{ maxHeight: openEditions.includes(2025) ? "20000px" : "0px" }}
+            style={{ maxHeight: openEdition === 2025 ? "20000px" : "0px" }}
           >
           <div className="pt-10 md:pt-14">
           <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-12">
@@ -836,21 +851,21 @@ export default function PicsaiPage() {
           <button
             type="button"
             onClick={() => toggleEdition(2024)}
-            aria-expanded={openEditions.includes(2024)}
+            aria-expanded={openEdition === 2024}
             aria-controls="edition-2024-content"
             className="flex w-full items-center justify-between gap-4 text-left"
           >
             <h2 className="font-test-american-grotesk text-[1.85rem] font-bold leading-[1.42] tracking-tight text-black font-sans sm:text-4xl md:text-5xl md:leading-[1.2] lg:text-[3.25rem]">
               10.2024 | First Edition
             </h2>
-            <span className={`text-2xl text-black/50 transition-transform duration-300 md:text-3xl ${openEditions.includes(2024) ? "rotate-180" : ""}`}>
+            <span className={`text-2xl text-black/50 transition-transform duration-300 md:text-3xl ${openEdition === 2024 ? "rotate-180" : ""}`}>
               ↓
             </span>
           </button>
           <div
             id="edition-2024-content"
             className="overflow-hidden transition-all duration-500 ease-in-out"
-            style={{ maxHeight: openEditions.includes(2024) ? "20000px" : "0px" }}
+            style={{ maxHeight: openEdition === 2024 ? "20000px" : "0px" }}
           >
           <div className="pt-10 md:pt-14">
           <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-12">
