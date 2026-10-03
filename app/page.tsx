@@ -340,6 +340,33 @@ const MOMENTS = {
 
 type MomentYear = keyof typeof MOMENTS;
 
+function Caret({ open, large = false }: { open: boolean; large?: boolean }) {
+  return (
+    <span
+      className={`inline-flex shrink-0 items-center justify-center text-black/50 ${
+        large ? "h-8 w-8 md:h-10 md:w-10" : "h-6 w-6"
+      }`}
+    >
+      <svg
+        viewBox="0 0 16 16"
+        aria-hidden
+        className={`transition-transform duration-300 ${large ? "h-5 w-5 md:h-6 md:w-6" : "h-4 w-4"} ${
+          open ? "rotate-180" : ""
+        }`}
+      >
+        <path
+          d="M4 6 L8 10 L12 6"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.25"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </span>
+  );
+}
+
 function shiftMoment(
   current: { year: MomentYear; index: number } | null,
   delta: number
@@ -539,9 +566,7 @@ export default function PicsaiPage() {
             <h2 className="font-test-american-grotesk text-[1.85rem] font-bold leading-[1.42] tracking-tight text-black font-sans sm:text-4xl md:text-5xl md:leading-[1.2] lg:text-[3.25rem]">
               10.2026 | Third Edition
             </h2>
-            <span className={`text-2xl text-black/50 transition-transform duration-300 md:text-3xl ${openEdition === 2026 ? "rotate-180" : ""}`}>
-              ↓
-            </span>
+            <Caret open={openEdition === 2026} large />
           </button>
           <div
             id="edition-2026-content"
@@ -630,9 +655,7 @@ export default function PicsaiPage() {
               <span className="font-test-american-grotesk text-lg font-bold tracking-tight text-black font-sans sm:text-xl underline">
                 Schedule | 2026
               </span>
-              <span className={`text-xl text-black/50 transition-transform duration-300 ${scheduleYear === 2026 ? "rotate-180" : ""}`}>
-                ⌄
-              </span>
+              <Caret open={scheduleYear === 2026} />
             </button>
 
             <div
@@ -707,9 +730,7 @@ export default function PicsaiPage() {
             <h2 className="font-test-american-grotesk text-[1.85rem] font-bold leading-[1.42] tracking-tight text-black font-sans sm:text-4xl md:text-5xl md:leading-[1.2] lg:text-[3.25rem]">
               09.2025 | Second Edition
             </h2>
-            <span className={`text-2xl text-black/50 transition-transform duration-300 md:text-3xl ${openEdition === 2025 ? "rotate-180" : ""}`}>
-              ↓
-            </span>
+            <Caret open={openEdition === 2025} large />
           </button>
           <div
             id="edition-2025-content"
@@ -796,9 +817,7 @@ export default function PicsaiPage() {
               <span className="font-test-american-grotesk text-lg font-bold tracking-tight text-black font-sans sm:text-xl underline">
                 Schedule | 2025
               </span>
-              <span className={`text-xl text-black/50 transition-transform duration-300 ${scheduleYear === 2025 ? "rotate-180" : ""}`}>
-                ⌄
-              </span>
+              <Caret open={scheduleYear === 2025} />
             </button>
 
             <div
@@ -874,9 +893,7 @@ export default function PicsaiPage() {
             <h2 className="font-test-american-grotesk text-[1.85rem] font-bold leading-[1.42] tracking-tight text-black font-sans sm:text-4xl md:text-5xl md:leading-[1.2] lg:text-[3.25rem]">
               10.2024 | First Edition
             </h2>
-            <span className={`text-2xl text-black/50 transition-transform duration-300 md:text-3xl ${openEdition === 2024 ? "rotate-180" : ""}`}>
-              ↓
-            </span>
+            <Caret open={openEdition === 2024} large />
           </button>
           <div
             id="edition-2024-content"
@@ -964,9 +981,7 @@ export default function PicsaiPage() {
               <span className="font-test-american-grotesk text-lg font-bold tracking-tight text-black font-sans sm:text-xl underline">
                 Schedule | 2024
               </span>
-              <span className={`text-xl text-black/50 transition-transform duration-300 ${scheduleYear === 2024 ? "rotate-180" : ""}`}>
-                ⌄
-              </span>
+              <Caret open={scheduleYear === 2024} />
             </button>
 
             <div
