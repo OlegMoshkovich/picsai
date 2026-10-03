@@ -406,7 +406,7 @@ export default function PicsaiPage() {
       <div className="flex flex-col md:min-h-dvh">
         <SiteNavbar />
 
-        <section className="flex flex-col gap-16 px-4 pb-16 pt-12 sm:px-6 md:flex-1 md:gap-0 md:px-8 md:pb-14 md:pt-4 lg:px-8">
+        <section className="flex flex-col gap-16 px-4 pb-4 pt-12 sm:px-6 md:flex-1 md:gap-0 md:px-8 md:pb-14 md:pt-4 lg:px-8">
           <div className="mt-5 md:mt-0 md:flex md:flex-1 md:items-center">
             <div className="mx-auto w-full max-w-7xl md:-translate-y-10">
               <div className="grid grid-cols-1 items-start gap-14 md:grid-cols-[1.15fr_0.85fr] md:gap-20 lg:gap-28">
@@ -514,7 +514,7 @@ export default function PicsaiPage() {
 
       <section
         id="edition-2026"
-        className="flex min-h-dvh w-full scroll-mt-0 flex-col bg-[#E9E8DE] px-4 sm:px-6 lg:px-8 pt-8 pb-16 md:pt-10 md:pb-20"
+        className="flex w-full scroll-mt-0 flex-col bg-[#E9E8DE] px-4 sm:px-6 lg:px-8 pt-8 pb-8 md:pt-10 md:pb-10"
       >
         <div className="mx-auto w-full max-w-7xl">
           <h2 className="mb-10 font-test-american-grotesk text-[1.85rem] font-bold leading-[1.42] tracking-tight text-black font-sans sm:text-4xl md:mb-14 md:text-5xl md:leading-[1.2] lg:text-[3.25rem]">
@@ -639,10 +639,7 @@ export default function PicsaiPage() {
           </div>
 
           {/* Photo Gallery — PICSAI 2026 */}
-          <div className="mt-16">
-            <p className="mb-4 text-[10px] font-sans uppercase tracking-wide text-black/50">
-              Moments | 2026
-            </p>
+          <div className="mt-8">
             <div className="flex gap-2 overflow-x-auto pb-2">
               {Array.from({ length: MOMENTS[2026].count }, (_, i) => i + 1).map((n) => (
                 <button
@@ -806,10 +803,7 @@ export default function PicsaiPage() {
           </div>
 
           {/* Photo Gallery — PICSAI 2025 */}
-          <div className="mt-16">
-            <p className="mb-4 text-[10px] font-sans uppercase tracking-wide text-black/50">
-              Moments | 2025
-            </p>
+          <div className="mt-8">
             <div className="flex gap-2 overflow-x-auto pb-2">
               {Array.from({ length: MOMENTS[2025].count }, (_, i) => i + 1).map((n) => (
                 <button
