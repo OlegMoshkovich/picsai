@@ -354,8 +354,24 @@ export default function PicsaiPage() {
   const pageScrollRef = useRef<HTMLDivElement>(null);
   const [scheduleYear, setScheduleYear] = useState<number | null>(null);
   const [openEdition, setOpenEdition] = useState<number | null>(2026);
-  const toggleEdition = (year: number) =>
+  // Opening an edition collapses the one above it; keep the tapped heading
+  // fixed on screen while that collapse animates instead of letting the page jump.
+  const keepInView = (el: HTMLElement) => {
+    const container = pageScrollRef.current;
+    if (!container) return;
+    const top = el.getBoundingClientRect().top;
+    const end = performance.now() + 600;
+    const step = () => {
+      const drift = el.getBoundingClientRect().top - top;
+      if (drift) container.scrollTop += drift;
+      if (performance.now() < end) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+  const toggleEdition = (year: number, el: HTMLElement) => {
+    keepInView(el);
     setOpenEdition((current) => (current === year ? null : year));
+  };
   const [modalPhoto, setModalPhoto] = useState<{ year: MomentYear; index: number } | null>(null);
 
   useEffect(() => {
@@ -515,7 +531,7 @@ export default function PicsaiPage() {
         <div className="mx-auto w-full max-w-7xl">
           <button
             type="button"
-            onClick={() => toggleEdition(2026)}
+            onClick={(event) => toggleEdition(2026, event.currentTarget)}
             aria-expanded={openEdition === 2026}
             aria-controls="edition-2026-content"
             className="flex w-full items-center justify-between gap-4 text-left"
@@ -683,7 +699,7 @@ export default function PicsaiPage() {
         <div className="mx-auto w-full max-w-7xl">
           <button
             type="button"
-            onClick={() => toggleEdition(2025)}
+            onClick={(event) => toggleEdition(2025, event.currentTarget)}
             aria-expanded={openEdition === 2025}
             aria-controls="edition-2025-content"
             className="flex w-full items-center justify-between gap-4 text-left"
@@ -850,7 +866,7 @@ export default function PicsaiPage() {
         <div className="mx-auto w-full max-w-7xl">
           <button
             type="button"
-            onClick={() => toggleEdition(2024)}
+            onClick={(event) => toggleEdition(2024, event.currentTarget)}
             aria-expanded={openEdition === 2024}
             aria-controls="edition-2024-content"
             className="flex w-full items-center justify-between gap-4 text-left"
