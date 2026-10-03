@@ -406,7 +406,7 @@ export default function PicsaiPage() {
       <div className="flex flex-col md:min-h-dvh">
         <SiteNavbar />
 
-        <section className="flex flex-col gap-16 px-4 pb-16 pt-12 sm:px-6 md:flex-1 md:gap-0 md:px-8 md:pb-14 md:pt-4 lg:px-8">
+        <section className="flex flex-col gap-16 px-4 pb-4 pt-12 sm:px-6 md:flex-1 md:gap-0 md:px-8 md:pb-14 md:pt-4 lg:px-8">
           <div className="mt-5 md:mt-0 md:flex md:flex-1 md:items-center">
             <div className="mx-auto w-full max-w-7xl md:-translate-y-10">
               <div className="grid grid-cols-1 items-start gap-14 md:grid-cols-[1.15fr_0.85fr] md:gap-20 lg:gap-28">
