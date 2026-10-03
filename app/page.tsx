@@ -518,7 +518,7 @@ export default function PicsaiPage() {
       >
         <div className="mx-auto w-full max-w-7xl">
           <h2 className="mb-10 font-test-american-grotesk text-[1.85rem] font-bold leading-[1.42] tracking-tight text-black font-sans sm:text-4xl md:mb-14 md:text-5xl md:leading-[1.2] lg:text-[3.25rem]">
-            Third Edition |  10.2026
+            10.2026 | Third Edition
           </h2>
 
 
@@ -674,7 +674,7 @@ export default function PicsaiPage() {
             className="flex w-full items-center justify-between gap-4 text-left"
           >
             <h2 className="font-test-american-grotesk text-[1.85rem] font-bold leading-[1.42] tracking-tight text-black font-sans sm:text-4xl md:text-5xl md:leading-[1.2] lg:text-[3.25rem]">
-              Second Edition |  09.2025
+              09.2025 | Second Edition
             </h2>
             <span className={`text-2xl text-black/50 transition-transform duration-300 md:text-3xl ${openEditions.includes(2025) ? "rotate-180" : ""}`}>
               ↓
@@ -841,7 +841,7 @@ export default function PicsaiPage() {
             className="flex w-full items-center justify-between gap-4 text-left"
           >
             <h2 className="font-test-american-grotesk text-[1.85rem] font-bold leading-[1.42] tracking-tight text-black font-sans sm:text-4xl md:text-5xl md:leading-[1.2] lg:text-[3.25rem]">
-              First Edition |  10.2024
+              10.2024 | First Edition
             </h2>
             <span className={`text-2xl text-black/50 transition-transform duration-300 md:text-3xl ${openEditions.includes(2024) ? "rotate-180" : ""}`}>
               ↓
