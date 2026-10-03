@@ -333,7 +333,7 @@ const SCHEDULE_2026 = [
 ];
 
 const MOMENTS = {
-  2026: { dir: "picsai26", count: 5 },
+  2026: { dir: "picsai26", count: 4 },
   2025: { dir: "picsai25", count: 6 },
   2024: { dir: "picsai24", count: 5 },
 } as const;
@@ -631,7 +631,7 @@ export default function PicsaiPage() {
                 Schedule | 2026
               </span>
               <span className={`text-xl text-black/50 transition-transform duration-300 ${scheduleYear === 2026 ? "rotate-180" : ""}`}>
-                ↓
+                ⌄
               </span>
             </button>
 
@@ -797,7 +797,7 @@ export default function PicsaiPage() {
                 Schedule | 2025
               </span>
               <span className={`text-xl text-black/50 transition-transform duration-300 ${scheduleYear === 2025 ? "rotate-180" : ""}`}>
-                ↓
+                ⌄
               </span>
             </button>
 
@@ -965,7 +965,7 @@ export default function PicsaiPage() {
                 Schedule | 2024
               </span>
               <span className={`text-xl text-black/50 transition-transform duration-300 ${scheduleYear === 2024 ? "rotate-180" : ""}`}>
-                ↓
+                ⌄
               </span>
             </button>
 
