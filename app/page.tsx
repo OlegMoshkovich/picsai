@@ -637,6 +637,28 @@ export default function PicsaiPage() {
               </div>
             </div>
           </div>
+
+          {/* Photo Gallery — PICSAI 2026 */}
+          <div className="mt-8">
+            <div className="flex gap-2 overflow-x-auto pb-2">
+              {Array.from({ length: MOMENTS[2026].count }, (_, i) => i + 1).map((n) => (
+                <button
+                  key={n}
+                  className="relative h-64 w-96 flex-none overflow-hidden cursor-zoom-in"
+                  onClick={() => setModalPhoto({ year: 2026, index: n })}
+                >
+                  <Image
+                    src={`/picsai26/${n}.jpeg`}
+                    alt={`PICSAI 2026 — photo ${n}`}
+                    fill
+                    sizes="384px"
+                    unoptimized
+                    className="object-cover"
+                  />
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
       <section
@@ -781,10 +803,7 @@ export default function PicsaiPage() {
           </div>
 
           {/* Photo Gallery — PICSAI 2025 */}
-          <div className="mt-16">
-            <p className="mb-4 text-[10px] font-sans uppercase tracking-wide text-black/50">
-              Moments | 2025
-            </p>
+          <div className="mt-8">
             <div className="flex gap-2 overflow-x-auto pb-2">
               {Array.from({ length: MOMENTS[2025].count }, (_, i) => i + 1).map((n) => (
                 <button
