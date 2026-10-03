@@ -76,36 +76,12 @@ const SPEAKERS26 = [
 ] as const;
 const SPEAKERS25 = [
   {
-    initials: "YA",
-    name: "Yasin Abbasi Yadkori",
-    title: "Principal Research Scientist",
-    affiliation: "Sapient Intellegence",
-    photo: "/team_photo/Yasin.png?v=2",
-    scholar: "https://scholar.google.com/citations?user=-D0EgMIAAAAJ",
-  },
-  {
-    initials: "GN",
-    name: "Gergely Neu",
+    initials: "WK",
+    name: "Wojciech Kotłowski",
     title: "Associate Professor",
-    affiliation: "Universitat Pompeu Fabra",
-    photo: "/picsai/Gergely.jpg",
-    scholar: "https://scholar.google.com/citations?user=uz27G84AAAAJ",
-  },
-  {
-    initials: "IK",
-    name: "Ilja Kuzborskij",
-    title: "Research Scientist",
-    affiliation: "Google DeepMind",
-    photo: "/picsai/Ilja.jpg",
-    scholar: "https://scholar.google.com/citations?user=4Io_CtIAAAAJ",
-  },
-  {
-    initials: "US",
-    name: "Umut Simsekli",
-    title: "Research Director",
-    affiliation: "Inria Paris",
-    photo: "/picsai/Umut.png",
-    scholar: "https://scholar.google.com/citations?user=CuArAkgAAAAJ",
+    affiliation: "Poznań University of Technology",
+    photo: "/picsai/Wojciech.jpg",
+    scholar: "https://scholar.google.com/citations?user=-75xQzMAAAAJ",
   },
   {
     initials: "AA",
@@ -116,20 +92,12 @@ const SPEAKERS25 = [
     scholar: "",
   },
   {
-    initials: "FA",
-    name: "Francesco Arzani",
+    initials: "IK",
+    name: "Ilja Kuzborskij",
     title: "Research Scientist",
-    affiliation: "INRIA Paris",
-    photo: "/picsai/Francesco.png",
-    scholar: "https://scholar.google.com/citations?user=xRDb0O8AAAAJ",
-  },
-  {
-    initials: "WK",
-    name: "Wojciech Kotłowski",
-    title: "Associate Professor",
-    affiliation: "Poznań University of Technology",
-    photo: "/picsai/Wojciech.jpg",
-    scholar: "https://scholar.google.com/citations?user=-75xQzMAAAAJ",
+    affiliation: "Google DeepMind",
+    photo: "/picsai/Ilja.jpg",
+    scholar: "https://scholar.google.com/citations?user=4Io_CtIAAAAJ",
   },
   {
     initials: "RG",
@@ -139,16 +107,40 @@ const SPEAKERS25 = [
     photo: "/picsai/Roza.jpg",
     scholar: "",
   },
-] as const;
-const SPEAKERS24 = [
+  {
+    initials: "GN",
+    name: "Gergely Neu",
+    title: "Associate Professor",
+    affiliation: "Universitat Pompeu Fabra",
+    photo: "/picsai/Gergely.jpg",
+    scholar: "https://scholar.google.com/citations?user=uz27G84AAAAJ",
+  },
+  {
+    initials: "FA",
+    name: "Francesco Arzani",
+    title: "Research Scientist",
+    affiliation: "INRIA Paris",
+    photo: "/picsai/Francesco.png",
+    scholar: "https://scholar.google.com/citations?user=xRDb0O8AAAAJ",
+  },
+  {
+    initials: "US",
+    name: "Umut Simsekli",
+    title: "Research Director",
+    affiliation: "Inria Paris",
+    photo: "/picsai/Umut.png",
+    scholar: "https://scholar.google.com/citations?user=CuArAkgAAAAJ",
+  },
   {
     initials: "YA",
     name: "Yasin Abbasi Yadkori",
-    title: "Research Scientist",
-    affiliation: "Google DeepMind",
+    title: "Principal Research Scientist",
+    affiliation: "Sapient Intellegence",
     photo: "/team_photo/Yasin.png?v=2",
     scholar: "https://scholar.google.com/citations?user=-D0EgMIAAAAJ",
   },
+] as const;
+const SPEAKERS24 = [
   {
     initials: "IM",
     name: "Inga Marchuk",
@@ -174,14 +166,6 @@ const SPEAKERS24 = [
     scholar: "",
   },
   {
-    initials: "IK",
-    name: "Ilja Kuzborskij",
-    title: "Research Scientist",
-    affiliation: "Google DeepMind",
-    photo: "/picsai/Ilja.jpg",
-    scholar: "https://scholar.google.com/citations?user=4Io_CtIAAAAJ",
-  },
-  {
     initials: "AA",
     name: "Anna Aristova",
     title: "Artist",
@@ -204,6 +188,22 @@ const SPEAKERS24 = [
     affiliation: "Universitat Pompeu Fabra",
     photo: "/picsai/Antoine.jpg",
     scholar: "https://scholar.google.com/citations?user=W6d2vtMAAAAJ",
+  },
+  {
+    initials: "IK",
+    name: "Ilja Kuzborskij",
+    title: "Research Scientist",
+    affiliation: "Google DeepMind",
+    photo: "/picsai/Ilja.jpg",
+    scholar: "https://scholar.google.com/citations?user=4Io_CtIAAAAJ",
+  },
+  {
+    initials: "YA",
+    name: "Yasin Abbasi Yadkori",
+    title: "Research Scientist",
+    affiliation: "Google DeepMind",
+    photo: "/team_photo/Yasin.png?v=2",
+    scholar: "https://scholar.google.com/citations?user=-D0EgMIAAAAJ",
   },
 ] as const;
 
