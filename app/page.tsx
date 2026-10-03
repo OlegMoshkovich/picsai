@@ -5,6 +5,7 @@ import Image from "next/image";
 import SiteNavbar from "./components/PicsaiNavbar";
 
 import SiteFooter from "./components/SiteFooter";
+import { HOME_SECTION_NAVIGATE_EVENT } from "./lib/home-section-navigation";
 
 
 const SPEAKERS26 = [
@@ -352,18 +353,35 @@ function shiftMoment(
 export default function PicsaiPage() {
   const pageScrollRef = useRef<HTMLDivElement>(null);
   const [scheduleYear, setScheduleYear] = useState<number | null>(null);
+  const [openEditions, setOpenEditions] = useState<number[]>([]);
+  const toggleEdition = (year: number) =>
+    setOpenEditions((current) =>
+      current.includes(year) ? current.filter((y) => y !== year) : [...current, year]
+    );
   const [modalPhoto, setModalPhoto] = useState<{ year: MomentYear; index: number } | null>(null);
 
   useEffect(() => {
+    const openEditionFor = (id: string) => {
+      const year = Number(id.match(/^edition-(\d{4})$/)?.[1]);
+      if (year === 2024 || year === 2025) {
+        setOpenEditions((current) => (current.includes(year) ? current : [...current, year]));
+      }
+    };
+    const onSectionNavigate = (event: Event) => {
+      openEditionFor((event as CustomEvent<string>).detail);
+    };
+    window.addEventListener(HOME_SECTION_NAVIGATE_EVENT, onSectionNavigate);
     const scrollToHash = () => {
       const id = window.location.hash.replace("#", "");
       if (!id) return;
+      openEditionFor(id);
       document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
     };
     scrollToHash();
     window.addEventListener("hashchange", scrollToHash);
     return () => {
       window.removeEventListener("hashchange", scrollToHash);
+      window.removeEventListener(HOME_SECTION_NAVIGATE_EVENT, onSectionNavigate);
     };
   }, []);
 
@@ -648,12 +666,29 @@ export default function PicsaiPage() {
       </section>
       <section
         id="edition-2025"
-        className="flex min-h-dvh w-full scroll-mt-0 flex-col bg-[#E9E8DE] px-4 sm:px-6 lg:px-8 pt-8 pb-16 md:pt-10 md:pb-20"
+        className="flex w-full scroll-mt-0 flex-col border-t border-black/10 bg-[#E9E8DE] px-4 sm:px-6 lg:px-8 py-8 md:py-10"
       >
         <div className="mx-auto w-full max-w-7xl">
-          <h2 className="mb-10 font-test-american-grotesk text-[1.85rem] font-bold leading-[1.42] tracking-tight text-black font-sans sm:text-4xl md:mb-14 md:text-5xl md:leading-[1.2] lg:text-[3.25rem]">
-          Second Edition |  09.2025
-          </h2>
+          <button
+            type="button"
+            onClick={() => toggleEdition(2025)}
+            aria-expanded={openEditions.includes(2025)}
+            aria-controls="edition-2025-content"
+            className="flex w-full items-center justify-between gap-4 text-left"
+          >
+            <h2 className="font-test-american-grotesk text-[1.85rem] font-bold leading-[1.42] tracking-tight text-black font-sans sm:text-4xl md:text-5xl md:leading-[1.2] lg:text-[3.25rem]">
+              Second Edition |  09.2025
+            </h2>
+            <span className={`text-2xl text-black/50 transition-transform duration-300 md:text-3xl ${openEditions.includes(2025) ? "rotate-180" : ""}`}>
+              ↓
+            </span>
+          </button>
+          <div
+            id="edition-2025-content"
+            className="overflow-hidden transition-all duration-500 ease-in-out"
+            style={{ maxHeight: openEditions.includes(2025) ? "20000px" : "0px" }}
+          >
+          <div className="pt-10 md:pt-14">
           <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-12">
               <div className="space-y-4 w-full md:col-span-3 md:w-[70%]">
                 <p
@@ -794,17 +829,36 @@ export default function PicsaiPage() {
               ))}
             </div>
           </div>
+          </div>
+          </div>
         </div>
       </section>
 
       <section
         id="edition-2024"
-        className="flex min-h-dvh w-full scroll-mt-0 flex-col bg-[#E9E8DE] px-4 sm:px-6 lg:px-8 pt-8 pb-16 md:pt-10 md:pb-20"
+        className="flex w-full scroll-mt-0 flex-col border-t border-black/10 bg-[#E9E8DE] px-4 sm:px-6 lg:px-8 py-8 md:py-10"
       >
         <div className="mx-auto w-full max-w-7xl">
-          <h2 className="mb-10 font-test-american-grotesk text-[1.85rem] font-bold leading-[1.42] tracking-tight text-black font-sans sm:text-4xl md:mb-14 md:text-5xl md:leading-[1.2] lg:text-[3.25rem]">
-          First Edition |  10.2024
-          </h2>
+          <button
+            type="button"
+            onClick={() => toggleEdition(2024)}
+            aria-expanded={openEditions.includes(2024)}
+            aria-controls="edition-2024-content"
+            className="flex w-full items-center justify-between gap-4 text-left"
+          >
+            <h2 className="font-test-american-grotesk text-[1.85rem] font-bold leading-[1.42] tracking-tight text-black font-sans sm:text-4xl md:text-5xl md:leading-[1.2] lg:text-[3.25rem]">
+              First Edition |  10.2024
+            </h2>
+            <span className={`text-2xl text-black/50 transition-transform duration-300 md:text-3xl ${openEditions.includes(2024) ? "rotate-180" : ""}`}>
+              ↓
+            </span>
+          </button>
+          <div
+            id="edition-2024-content"
+            className="overflow-hidden transition-all duration-500 ease-in-out"
+            style={{ maxHeight: openEditions.includes(2024) ? "20000px" : "0px" }}
+          >
+          <div className="pt-10 md:pt-14">
           <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-12">
               <div className="space-y-4 w-full md:col-span-3 md:w-[70%]">
                 <p
@@ -920,6 +974,8 @@ export default function PicsaiPage() {
                 ))}
               </div>
             </div>
+          </div>
+          </div>
           </div>
         </div>
       </section>
