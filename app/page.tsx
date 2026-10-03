@@ -514,7 +514,7 @@ export default function PicsaiPage() {
 
       <section
         id="edition-2026"
-        className="flex min-h-dvh w-full scroll-mt-0 flex-col bg-[#E9E8DE] px-4 sm:px-6 lg:px-8 pt-8 pb-16 md:pt-10 md:pb-20"
+        className="flex w-full scroll-mt-0 flex-col bg-[#E9E8DE] px-4 sm:px-6 lg:px-8 pt-8 pb-8 md:pt-10 md:pb-10"
       >
         <div className="mx-auto w-full max-w-7xl">
           <h2 className="mb-10 font-test-american-grotesk text-[1.85rem] font-bold leading-[1.42] tracking-tight text-black font-sans sm:text-4xl md:mb-14 md:text-5xl md:leading-[1.2] lg:text-[3.25rem]">
@@ -635,31 +635,6 @@ export default function PicsaiPage() {
                   </div>
                 ))}
               </div>
-            </div>
-          </div>
-
-          {/* Photo Gallery — PICSAI 2026 */}
-          <div className="mt-16">
-            <p className="mb-4 text-[10px] font-sans uppercase tracking-wide text-black/50">
-              Moments | 2026
-            </p>
-            <div className="flex gap-2 overflow-x-auto pb-2">
-              {Array.from({ length: MOMENTS[2026].count }, (_, i) => i + 1).map((n) => (
-                <button
-                  key={n}
-                  className="relative h-64 w-96 flex-none overflow-hidden cursor-zoom-in"
-                  onClick={() => setModalPhoto({ year: 2026, index: n })}
-                >
-                  <Image
-                    src={`/picsai26/${n}.jpeg`}
-                    alt={`PICSAI 2026 — photo ${n}`}
-                    fill
-                    sizes="384px"
-                    unoptimized
-                    className="object-cover"
-                  />
-                </button>
-              ))}
             </div>
           </div>
         </div>
