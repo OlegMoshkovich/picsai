@@ -563,7 +563,7 @@ export default function PicsaiPage() {
             aria-controls="edition-2026-content"
             className="flex w-full items-center justify-between gap-4 text-left"
           >
-            <h2 className="font-test-american-grotesk text-[1.85rem] font-bold leading-[1.42] tracking-tight text-black font-sans sm:text-4xl md:text-5xl md:leading-[1.2] lg:text-[3.25rem]">
+            <h2 className="font-test-american-grotesk text-[1.5rem] font-bold leading-[1.3] tracking-tight text-black font-sans sm:text-3xl md:text-4xl lg:text-[2.5rem]">
               10.2026 | Third Edition
             </h2>
             <Caret open={openEdition === 2026} large />
@@ -727,7 +727,7 @@ export default function PicsaiPage() {
             aria-controls="edition-2025-content"
             className="flex w-full items-center justify-between gap-4 text-left"
           >
-            <h2 className="font-test-american-grotesk text-[1.85rem] font-bold leading-[1.42] tracking-tight text-black font-sans sm:text-4xl md:text-5xl md:leading-[1.2] lg:text-[3.25rem]">
+            <h2 className="font-test-american-grotesk text-[1.5rem] font-bold leading-[1.3] tracking-tight text-black font-sans sm:text-3xl md:text-4xl lg:text-[2.5rem]">
               09.2025 | Second Edition
             </h2>
             <Caret open={openEdition === 2025} large />
@@ -890,7 +890,7 @@ export default function PicsaiPage() {
             aria-controls="edition-2024-content"
             className="flex w-full items-center justify-between gap-4 text-left"
           >
-            <h2 className="font-test-american-grotesk text-[1.85rem] font-bold leading-[1.42] tracking-tight text-black font-sans sm:text-4xl md:text-5xl md:leading-[1.2] lg:text-[3.25rem]">
+            <h2 className="font-test-american-grotesk text-[1.5rem] font-bold leading-[1.3] tracking-tight text-black font-sans sm:text-3xl md:text-4xl lg:text-[2.5rem]">
               10.2024 | First Edition
             </h2>
             <Caret open={openEdition === 2024} large />
