@@ -364,7 +364,7 @@ function shiftMoment(
 export default function PicsaiPage() {
   const pageScrollRef = useRef<HTMLDivElement>(null);
   const [scheduleYear, setScheduleYear] = useState<number | null>(null);
-  const [openEdition, setOpenEdition] = useState<number | null>(2026);
+  const [openEdition, setOpenEdition] = useState<number | null>(null);
   // Opening an edition collapses the one above it. Pin the tapped heading
   // so that collapse does not jump the page.
   const keepInView = (el: HTMLElement) => {
