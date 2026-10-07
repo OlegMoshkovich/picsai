@@ -472,21 +472,13 @@ export default function PicsaiPage() {
                         Third
                       </p>
                     </div>
-                    <div>
+                    <div className="col-start-3">
                       <p className="text-[10px] font-sans uppercase tracking-wide text-black/50">
                         Dates
                       </p>
                       <p className="mt-1 font-sans text-xs leading-snug text-black sm:text-base">
                         25.09 to 2.10
 
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-[10px] font-sans uppercase tracking-wide text-black/50">
-                        Location
-                      </p>
-                      <p className="mt-1 font-sans text-xs text-black sm:text-base">
-                        Alanya, Turkey
                       </p>
                     </div>
                   </div>
