@@ -523,7 +523,7 @@ export default function PicsaiPage() {
                   Arts Track: AI and artistic expression.
                 </p>
                 <p className="font-serif text-base leading-relaxed text-black/80">
-                  The intersection of AI and the arts: how the latest developments in machine learning are reshaping artistic expression.
+                  How AI and the arts shape each other: what machine learning opens up for artistic expression, and what artistic practice gives back to AI research.
                 </p>
               </div>
             </div>
