@@ -472,7 +472,7 @@ export default function PicsaiPage() {
                         Third
                       </p>
                     </div>
-                    <div className="col-start-3">
+                    <div>
                       <p className="text-[10px] font-sans uppercase tracking-wide text-black/50">
                         Dates
                       </p>
