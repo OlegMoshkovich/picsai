@@ -334,7 +334,7 @@ const SCHEDULE_2026 = [
 
 const MOMENTS = {
   2026: { dir: "picsai26", count: 4 },
-  2025: { dir: "picsai25", count: 6 },
+  2025: { dir: "picsai25", count: 4 },
   2024: { dir: "picsai24", count: 5 },
 } as const;
 
@@ -350,7 +350,7 @@ function Caret({ open, large = false }: { open: boolean; large?: boolean }) {
       <svg
         viewBox="0 0 16 16"
         aria-hidden
-        className={`transition-transform duration-300 ${large ? "h-5 w-5 md:h-6 md:w-6" : "h-4 w-4"} ${
+        className={`${large ? "h-5 w-5 md:h-6 md:w-6" : "h-4 w-4"} ${
           open ? "rotate-180" : ""
         }`}
       >
@@ -381,19 +381,16 @@ export default function PicsaiPage() {
   const pageScrollRef = useRef<HTMLDivElement>(null);
   const [scheduleYear, setScheduleYear] = useState<number | null>(null);
   const [openEdition, setOpenEdition] = useState<number | null>(2026);
-  // Opening an edition collapses the one above it; keep the tapped heading
-  // fixed on screen while that collapse animates instead of letting the page jump.
+  // Opening an edition collapses the one above it. Pin the tapped heading
+  // so that collapse does not jump the page.
   const keepInView = (el: HTMLElement) => {
     const container = pageScrollRef.current;
     if (!container) return;
     const top = el.getBoundingClientRect().top;
-    const end = performance.now() + 600;
-    const step = () => {
+    requestAnimationFrame(() => {
       const drift = el.getBoundingClientRect().top - top;
       if (drift) container.scrollTop += drift;
-      if (performance.now() < end) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
+    });
   };
   const toggleEdition = (year: number, el: HTMLElement) => {
     keepInView(el);
@@ -570,7 +567,7 @@ export default function PicsaiPage() {
           </button>
           <div
             id="edition-2026-content"
-            className="overflow-hidden transition-all duration-500 ease-in-out"
+            className="overflow-hidden"
             style={{ maxHeight: openEdition === 2026 ? "20000px" : "0px" }}
           >
           <div className="pt-10 md:pt-14">
@@ -659,7 +656,7 @@ export default function PicsaiPage() {
             </button>
 
             <div
-              className="overflow-hidden transition-all duration-500 ease-in-out"
+              className="overflow-hidden"
               style={{ maxHeight: scheduleYear === 2026 ? "9999px" : "0px" }}
             >
               <div className="pt-8 pb-4">
@@ -734,7 +731,7 @@ export default function PicsaiPage() {
           </button>
           <div
             id="edition-2025-content"
-            className="overflow-hidden transition-all duration-500 ease-in-out"
+            className="overflow-hidden"
             style={{ maxHeight: openEdition === 2025 ? "20000px" : "0px" }}
           >
           <div className="pt-10 md:pt-14">
@@ -821,7 +818,7 @@ export default function PicsaiPage() {
             </button>
 
             <div
-              className="overflow-hidden transition-all duration-500 ease-in-out"
+              className="overflow-hidden"
               style={{ maxHeight: scheduleYear === 2025 ? "9999px" : "0px" }}
             >
               <div className="pt-8 pb-4">
@@ -897,7 +894,7 @@ export default function PicsaiPage() {
           </button>
           <div
             id="edition-2024-content"
-            className="overflow-hidden transition-all duration-500 ease-in-out"
+            className="overflow-hidden"
             style={{ maxHeight: openEdition === 2024 ? "20000px" : "0px" }}
           >
           <div className="pt-10 md:pt-14">
@@ -985,7 +982,7 @@ export default function PicsaiPage() {
             </button>
 
             <div
-              className="overflow-hidden transition-all duration-500 ease-in-out"
+              className="overflow-hidden"
               style={{ maxHeight: scheduleYear === 2024 ? "9999px" : "0px" }}
             >
               <div className="pt-8 pb-4">
