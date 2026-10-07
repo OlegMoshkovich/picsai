@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import SiteNavbar from "./components/PicsaiNavbar";
+import SiteLogo from "./components/SiteLogo";
 
 import SiteFooter from "./components/SiteFooter";
 import { HOME_SECTION_NAVIGATE_EVENT } from "./lib/home-section-navigation";
@@ -452,6 +453,10 @@ export default function PicsaiPage() {
                         unoptimized
                       />
                     ))}
+                    <div aria-label="The AIR Lab" role="img" className="flex-none">
+                      <SiteLogo size={24} href={null} className="sm:hidden" />
+                      <SiteLogo size={34} href={null} className="hidden sm:block" />
+                    </div>
                   </div>
                 </div>
                 <div className="md:max-w-lg md:pt-2">
