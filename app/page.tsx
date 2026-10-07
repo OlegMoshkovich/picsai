@@ -317,7 +317,7 @@ const SCHEDULE_2026 = [
 ];
 
 const MOMENTS = {
-  2026: { dir: "picsai26", count: 4 },
+  2026: { dir: "picsai26", count: 7 },
   2025: { dir: "picsai25", count: 4 },
   2024: { dir: "picsai24", count: 5 },
 } as const;
