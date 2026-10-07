@@ -57,22 +57,6 @@ const SPEAKERS26 = [
     photo: "/picsai/Sattar.jpg",
     scholar: "https://scholar.google.com/citations?user=N9xs8w0AAAAJ",
   },
-  {
-    initials: "AA",
-    name: "Anna Aristova",
-    title: "Artist",
-    affiliation: "Royal Colleg of Art",
-    photo: "/team_photo/Anna.png?v=2",
-    scholar: "",
-  },
-  {
-    initials: "OM",
-    name: "Oleg Moshkovich",
-    title: "Co-founder",
-    affiliation: "The AIR Lab",
-    photo: "/team_photo/Oleg_Moshkovich.png?v=2",
-    scholar: "",
-  },
 ] as const;
 const SPEAKERS25 = [
   {
